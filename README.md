@@ -1,74 +1,63 @@
-# Zuber-S8-project
-S8 tripleten Pyhton / SQL project
+# Zuber Project
+Python / SQL Project
 
-# Análisis de Datos de Taxis en Chicago - Sprint 8
+# Chicago Taxi Market Data Analysis — Sprint 8
 
-## Descripción del Proyecto
+## Project Overview
+This project is part of Sprint 8 of the Data Analytics course. It consists of an exploratory data analysis of the taxi market in Chicago for Zuber, a new ride-sharing company launching in the city.
 
-Este proyecto forma parte del Sprint 8 del curso de Análisis de Datos, donde se realiza un análisis exploratorio de datos sobre el mercado de taxis en Chicago para la empresa Zuber, una nueva compañía de viajes compartidos que se está lanzando en la ciudad.
+## Objectives
+- Analyze patterns in Chicago taxi ride data
+- Identify the leading taxi companies and their market share
+- Determine the most popular neighborhoods as ride destinations
+- Test hypotheses about the impact of weather conditions on ride duration
 
-## Objetivos
+## Datasets
 
-- Analizar patrones en los datos de viajes de taxi en Chicago
-- Identificar las principales empresas de taxis y su participación en el mercado
-- Determinar los barrios más populares como destinos de viajes
-- Probar hipótesis sobre el impacto del clima en la duración de los viajes
+### Dataset 1: Taxi Companies (project_sql_result_01.csv)
+- company_name: Taxi company name
+- trips_amount: Number of trips per company (November 15–16, 2017)
 
-Datos Utilizados
-### Dataset 1: Empresas de Taxis (project_sql_result_01.csv)
-- company_name: Nombre de la empresa de taxis
-- trips_amount: Número de viajes de cada compañía (15-16 noviembre 2017)
+### Dataset 2: Neighborhood Destinations (project_sql_result_04.csv)
+- dropoff_location_name: Chicago neighborhoods where rides ended
+- average_trips: Average number of rides ending in each neighborhood (November 2017)
 
-### Dataset 2: Destinos por Barrio (project_sql_result_04.csv)
-- dropoff_location_name: Barrios de Chicago donde finalizaron los viajes
-- average_trips: Promedio de viajes que terminaron en cada barrio (noviembre 2017)
+### Dataset 3: Loop–Airport Rides (project_sql_result_07.csv)
+- start_ts: Ride start date and time
+- weather_conditions: Weather conditions at the start of the ride
+- duration_seconds: Ride duration in seconds
 
-### Dataset 3: Viajes Loop-Aeropuerto (project_sql_result_07.csv)
-- start_ts: Fecha y hora de inicio del viaje
-- weather_conditions: Condiciones climáticas al inicio del viaje
-- duration_seconds: Duración del viaje en segundos
+## Methodology
 
-Metodología
-### 1. Análisis Exploratorio de Datos
-- Importación y exploración inicial de los datasets
-- Validación de tipos de datos y estructura
-- Identificación de las top 10 empresas de taxis
-- Análisis de los 10 barrios principales por destinos
+### 1. Exploratory Data Analysis
+- Initial dataset import and inspection
+- Data type validation and structure review
+- Identification of the top 10 taxi companies by volume
+- Analysis of the top 10 neighborhoods by drop-off frequency
 
-### 2. Visualización de Datos
-- Gráfico de barras: Empresas de taxis y número de viajes
-- Gráfico de barras: Top 10 barrios por número de destinos
-- Análisis visual de patrones y tendencias
+### 2. Data Visualization
+- Bar chart: Taxi companies by number of trips
+- Bar chart: Top 10 neighborhoods by destination volume
+- Visual analysis of patterns and trends
 
-### 3. Prueba de Hipótesis
-- Hipótesis Nula (H₀): La duración promedio de los viajes desde el Loop hasta el Aeropuerto Internacional O'Hare NO cambia los sábados lluviosos
-- Hipótesis Alternativa (H₁): La duración promedio de los viajes desde el Loop hasta el Aeropuerto Internacional O'Hare SÍ cambia los sábados lluviosos
-- Nivel de significación: α = 0.05
-- Método: Prueba t de Student para muestras independientes
+### 3. Hypothesis Testing
+- Null Hypothesis (H₀): The average duration of rides from the Loop to O'Hare International Airport does NOT change on rainy Saturdays
+- Alternative Hypothesis (H₁): The average duration of rides from the Loop to O'Hare International Airport DOES change on rainy Saturdays
+- Significance level: α = 0.05
+- Method: Student's t-test for independent samples
 
-Librerías Utilizadas
-pandas: Manipulación y análisis de datos
-matplotlib: Creación de visualizaciones
-scipy: Pruebas estadísticas
-numpy: Operaciones numéricas
-math: Operaciones matemáticas básicas
-Principales Hallazgos
-### Empresas de Taxis
-- Flash Cab lidera el mercado con ~20,000 viajes en el período analizado
-- Taxi Affiliation Services ocupa el segundo lugar con ~11,400 viajes
-- Existe una brecha signific
+## Libraries Used
+- **pandas:** Data manipulation and analysis
+- **matplotlib:** Data visualization
+- **scipy:** Statistical testing
+- **numpy:** Numerical operations
+- **math:** Basic mathematical operations
 
-## Estructura del Proyecto
+## Key Findings
 
-```
-taxi-analysis-chicago/
-│
-├── notebook.ipynb          # Notebook principal con el análisis
-├── README.md              # Este archivo
-└── datasets/              # Archivos de datos (no incluidos en el repositorio)
-    ├── project_sql_result_01.csv
-    ├── project_sql_result_04.csv
-    └── project_sql_result_07.csv
-```
-## Autor
-[Julián De La Garza Lepe]
+### Taxi Companies
+- Flash Cab leads the market with approximately 20,000 trips during the analyzed period
+- Taxi Affiliation Services ranks second with approximately 11,400 trips
+- A significant gap exists between the top two companies and the remainder of the market
+
+## Project Structure
